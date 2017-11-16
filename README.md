@@ -20,8 +20,10 @@ Some example methods: http://docs.sequelizejs.com/class/lib/query-interface.js~Q
 3. Run migration
   sequelize db:migrate
   
+-> Now you should see the changes reflected in your database.
+  
 How to create a new model:
   
   sequelize model:generate --name modelName --attributes columnName1:datatype, columbName2:datatype
  
- -> After you run this command, you will see your model created in the model directory as well as the initial migration file for that model
+ -> After you run this command, you will see your model created in the model directory as well as the initial migration file for that model.
