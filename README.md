@@ -23,6 +23,7 @@ Some example methods: http://docs.sequelizejs.com/class/lib/query-interface.js~Q
 -> Now you should see the changes reflected in your database.
   
 How to create a new model:
+In the terminal, type the following:
   
  ```sequelize model:generate --name modelName --attributes columnName1:datatype, columbName2:datatype```
  
