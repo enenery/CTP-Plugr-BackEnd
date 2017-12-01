@@ -40,10 +40,12 @@ passport.authenticate('local', function(err, user, info)
             msg: "Failure POST to login"
         });
     }else{
-        res.json({
-        
-        msg: "Successful POST to login"
-    });
+        Users.findOne({where: {email: user.email} }).then(user =>{
+            res.json({
+            users: user,
+            msg: "Successful GET to '/' route"
+            })
+        });
     }
     
 })(req, res, next);
