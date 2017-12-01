@@ -91,6 +91,7 @@ router.post('/register', (req, res) => {
           res.redirect('/profile')
         );
       }).catch((e) => {
+          console.log(e);
         res.json({
         msg: e
         });
