@@ -20,17 +20,35 @@ router.get('/load', (req, res) => {
 // ============== LOGIN ==============
 // ===================================
 
-router.post('/login', (req, res) => {
+router.post('/login', (req, res, next) => {
     /*
     res.json({
         msg: "Successful POST To login"
     });
     */
-    
+ /*  
     passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
   })(req, res);
+*/
+
+passport.authenticate('local', function(err, user, info)
+{
+    if(!user){
+        res.json({
+            msg: "Failure POST to login"
+        });
+    }else{
+        res.json({
+        
+        msg: "Successful POST to login"
+    });
+    }
+    
+})(req, res, next);
+//passport.authenticate('local', {successFlash: 'Welcome!'});
+
 });
 
 
