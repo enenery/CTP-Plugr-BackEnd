@@ -2,9 +2,30 @@
 CUNY Tech Prep - Section 3 - Football Plugr - Back End Code
 
 ## How to get started
+1. fork this repo by clicking "fork"
+2. clone the repo to your desktop. In your terminal, type the following:
+```git clone --recursive https://github.com/YOUR_USERNAME/CTP-Plugr-BackEnd.git```
+3. set up a remote named origin. In your terminal, type the following:
+```git remote add origin https://github.com/YOUR_USERNAME/CTP-Plugr-BackEnd.git```
+4. set up a remote named remote. In your terminal, type the following:
+```git remote add origin https://github.com/enzoames/CTP-Plugr-BackEnd.git```
+5. run ```git remote -v``` to check the status of your remote setup. You should see the following:
+> origin https://github.com/YOUR_USERNAME/CTP-Plugr-BackEnd.git (fetch) 
+
+> origin https://github.com/YOUR_USERNAME/CTP-Plugr-BackEnd.git (push)
+
+> upstream https://github.com/YOUR_USERNAME/CTP-Plugr-BackEnd.git (fetch)
+
+> upstream https://github.com/YOUR_USERNAME/CTP-Plugr-BackEnd.git (push)
+
+
 
 ## Workflow
-```git pull```
+1. update your local copy with remote changes. In your terminal, run the following:
+
+```git pull``` 
+or 
+```git fetch upstream``` + ```git merge upstream/master```
 
 ```npm install```
 
