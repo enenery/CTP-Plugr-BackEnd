@@ -90,9 +90,9 @@ router.post('/team-register', (req, res) => {
         description: req.body.description,
         teamPicture: req.body.teamPicture,
         teamLogo: req.body.teamLogo
-      }).then((user) => {
-        req.login(user, () =>
-          res.redirect('/profile')
+      }).then((team) => {
+        req.login(team, () =>
+          res.redirect('/')
         );
       }).catch((e) => {
           console.log(e);
