@@ -2,6 +2,7 @@ const express = require('express');
 const models = require('../models');
 const passport = require('../middlewares/authentication');
 const Users = models.Users;
+const Teams = models.Teams;
 
 const router = express.Router();
 
@@ -69,6 +70,26 @@ router.post('/register', (req, res) => {
         email: req.body.email,
         password: req.body.password,
         userType: req.body.userType
+      }).then((user) => {
+        req.login(user, () =>
+          res.redirect('/profile')
+        );
+      }).catch((e) => {
+          console.log(e);
+        res.json({
+        msg: e
+        });
+              });
+    
+});
+
+router.post('/team-register', (req, res) => {
+        Teams.create({
+        teamName: req.body.teamName,
+        teamAbbr: req.body.teamAbbr,
+        description: req.body.description,
+        teamPicture: req.body.teamPicture,
+        teamLogo: req.body.teamLogo
       }).then((user) => {
         req.login(user, () =>
           res.redirect('/profile')
