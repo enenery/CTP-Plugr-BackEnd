@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var Leagues = sequelize.define('Leagues', {
     name: DataTypes.STRING,
-    stablished: DataTypes.DATE,
+    established: DataTypes.DATE,
     description: DataTypes.TEXT,
     teamCount: DataTypes.INTEGER,
     uniqueRules: DataTypes.TEXT,
@@ -14,5 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
+
+  Leagues.associate = (models) => {
+    Leagues.belongsTo(models.Users, {as:'LeagueOrganizer', foreignKey: 'leagueOrganizer'});
+  }
   return Leagues;
 };
