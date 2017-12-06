@@ -71,7 +71,26 @@ router.post('/register', (req, res) => {
         msg: e
         });
     });
-    
+});
+
+router.post('/team-register', (req, res) => {
+        Teams.create({ 
+            teamName: req.body.teamName,
+            teamAbbr: req.body.teamAbbr,
+            description: req.body.description,
+            teamPicture: req.body.teamPicture,
+            teamLogo: req.body.teamLogo,
+            teamCaptain: req.user.id
+      }).then((team) => {
+        res.json({
+        msg: "Successful Team Registration"
+            });
+      }).catch((e) => {
+          console.log(e);
+        res.json({
+        msg: e
+        });
+              });
 });
 
 module.exports = router;
